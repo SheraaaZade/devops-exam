@@ -1,4 +1,4 @@
-const { isEmpty } = require("../validations");
+const { isEmpty, containsSpecialChar } = require("../validations");
 const { isEightChar } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
@@ -28,5 +28,10 @@ describe("validation tests suites - isEightChar", () => {
     test("should return false as the label contains less than 8 chars", ()=>{
         const result = isEightChar("gamerZ"); 
         expect(result).toBe(false);
+    });
+
+    test("should return true as the label contains at least one special char", ()=>{
+        const result = containsSpecialChar("gamer-Tag"); 
+        expect(result).toBe(true);
     });
 });
