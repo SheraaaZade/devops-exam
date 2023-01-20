@@ -1,6 +1,11 @@
 /* istanbul ignore file */
 try {
-    const { isEmpty } = require("./services/validations");
+    const {
+        isEmpty,
+        isEightChar,
+        containsNumber,
+        containsSpecialChar,
+    } = require("./services/validations");
     const gamerTagInput = document.getElementById("gamerTagInput");
     const checkButton = document.getElementById("gamerTagCheckButton");
     const feedbackMessage = document.getElementById("gamerTagFeedback");
@@ -18,6 +23,13 @@ try {
             ? "Gamer tag cannot be empty"
             : "Gamer tag is valid";
         feedbackMessage.textContent = feedbackMessageText;
+        errorMessageText =
+            isEightChar(gamerTagValue) ||
+            containsNumber(gamerTagValue) ||
+            containsSpecialChar(gamerTagValue)
+                ? "Error with the name choosen"
+                : "Gamer tag is valid !";
+        checkButton.textContent = errorMessageText;
     });
 } catch (err) {
     console.error(JSON.stringify(err));
