@@ -1,6 +1,7 @@
 const {
     isEmpty,
-    containsSpecialChar, containsNumber
+    containsSpecialChar,
+    containsNumber,
 } = require("../validations");
 const { isEightChar } = require("../validations");
 
