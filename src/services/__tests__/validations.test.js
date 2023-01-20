@@ -1,4 +1,5 @@
 const { isEmpty } = require("../validations");
+const { isEightChar } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
     test("should return true as the label is undefined", () => {
@@ -18,3 +19,9 @@ describe("validations tests suites - isEmpty", () => {
 });
 
 // TODO: Create tests suite for validation function
+describe("validation tests suites - isEightChar", () => {
+    test("should return true as the label contains at least 8 chars", ()=>{
+        const result = isEightChar("gamerTag"); 
+        expect(result).toBe(true);
+    });
+});
