@@ -24,4 +24,9 @@ describe("validation tests suites - isEightChar", () => {
         const result = isEightChar("gamerTag"); 
         expect(result).toBe(true);
     });
+
+    test("should return false as the label contains less than 8 chars", ()=>{
+        const result = isEightChar("gamerZ"); 
+        expect(result).toBe(false);
+    });
 });
