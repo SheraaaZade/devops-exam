@@ -2,7 +2,7 @@ name: DevOps examen janvier 2023 - Chehrazad OUAZZANI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
