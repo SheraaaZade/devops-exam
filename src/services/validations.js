@@ -4,10 +4,11 @@ const isEmpty = (label) => !label || label.length === 0;
 
 const isEightChar = (label) => label.length >= 8;
 
-module.exports.containsSpecialChar = (label) => {
+module.exports.containsSpecialChar = (label) => /[^a-zA-Z]/.test(label);
+
+module.exports.containsNumber = (label) => {
     if (!label) return false;
-    console.log(label);
-    const found = /[^a-zA-Z0-9]/.test(label);
+    const found = /\d/.test(label);
     return found;
 };
 
